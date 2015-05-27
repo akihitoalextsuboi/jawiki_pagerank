@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150527060000) do
 
   create_table "page", primary_key: "page_id", force: :cascade do |t|
     t.integer "page_namespace",     limit: 4,   default: 0,     null: false
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "page_latest",        limit: 4,   default: 0,     null: false
     t.integer "page_len",           limit: 4,   default: 0,     null: false
     t.binary  "page_content_model", limit: 32
+    t.float   "page_score",         limit: 24
   end
 
   add_index "page", ["page_is_redirect", "page_namespace", "page_len"], name: "page_redirect_namespace_len", using: :btree

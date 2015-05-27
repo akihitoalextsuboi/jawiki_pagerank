@@ -17,6 +17,15 @@ default: &default
   password:
   socket: /var/run/mysqld/mysqld.sock
 
+local:
+  adapter: mysql2
+  encoding: utf8
+  database: jawiki_local
+  pool: 5
+  username: root
+  password: 
+  socket: /tmp/mysql.sock
+
 development:
   adapter: mysql2
   encoding: utf8
