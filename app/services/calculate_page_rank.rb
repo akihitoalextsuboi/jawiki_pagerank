@@ -17,7 +17,7 @@ class CalculatePageRank
         i += 1
     
        (1..3216300).each do |id|
-	  page = Page.find(id)
+	  page = Page.where(page_id: id).first
 	  temp_score = 0
 	  return if page.blank?
           linked_page_ids = page.pagelinks_by_title.pluck(:pl_from)
