@@ -16,7 +16,7 @@ class CalculatePageRank
       while i < LOOP_COUNT
         i += 1
     
-        10000000.each do |id|
+       (1..3216300).each do |id|
 	  page = Page.find(id)
 	  temp_score = 0
 	  return if page.blank?
