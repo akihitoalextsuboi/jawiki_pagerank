@@ -16,8 +16,10 @@ class CalculatePageRank
       while i < LOOP_COUNT
         i += 1
     
-        Page.all.each do |page|
+        10000000.each do |id|
+	  page = Page.find(id)
 	  temp_score = 0
+	  return if page.blank?
           linked_page_ids = page.pagelinks_by_title.pluck(:pl_from)
           linked_page_ids.each do |linked_page_id|
 	    page = Page.where(linked_page_id).first
